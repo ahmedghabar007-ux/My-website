@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>جمعية طريق النجاح — مركز للدروس والدعم</title>
+  <style>
+    :root{
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --muted:#6b7280;
+      --shadow: 0 6px 18px rgba(38, 99, 235, 0.08);
+      --radius:14px;
+      font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", system-ui, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#0f172a;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+    }
+    .container{max-width:1100px;margin:0 auto}
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:22px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      background:linear-gradient(135deg,var(--accent),#60a5fa);
+      width:64px;height:64px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:var(--shadow)
+    }
+    h1{font-size:20px;margin:0}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+    /* grid */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
+
+    /* main card */
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    /* services list */
+    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width:600px){.services{grid-template-columns:1fr}}
+    .service{
+      border-radius:12px;padding:12px;background:linear-gradient(180deg,rgba(37,99,235,0.06),transparent);
+      border:1px solid rgba(37,99,235,0.06);
+    }
+    .service h3{margin:0;font-size:15px}
+    .muted{color:var(--muted);font-size:13px;margin-top:6px}
+
+    /* prices section */
+    .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    @media (max-width:900px){.prices{grid-template-columns:1fr}}
+
+    .price-card{
+      padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#f9fbff);border:1px solid #eef2ff;
+    }
+    .price-card h4{margin:0 0 8px}
+    .price-row{display:flex;justify-content:space-between;align-items:center;margin:6px 0}
+    .tag{font-size:12px;color:var(--muted)}
+
+    /* calculator */
+    .calc .section-title{display:flex;justify-content:space-between;align-items:center}
+    .subjects{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+    @media (max-width:600px){.subjects{grid-template-columns:1fr}}
+
+    label.checkbox{display:flex;align-items:center;gap:10px;padding:8px;border:1px solid #eef2ff;border-radius:10px;cursor:pointer}
+    input[type="checkbox"]{width:18px;height:18px}
+
+    .result{margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fbfbff,#ffffff);border:1px dashed #e6eefc}
+    .result strong{font-size:18px}
+
+    /* contact */
+    .contact-row{display:flex;gap:12px;align-items:center}
+    .contact-btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;display:inline-block}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* rtl tweaks for small text */
+    .small{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">طـــ</div>
+        <div>
+          <h1>جمعية طريق النجاح</h1>
+          <p class="lead">دروس دعم — رياضيات، فيزياء، علوم، فرنسية، إنجليزية — جميع المستويات</p>
+        </div>
+      </div>
+      <div class="contact-row">
+        <!-- استبدل الأرقام والإيميل بما يخصكم -->
+        <div class="small">هاتف: <strong id="phone">06 00 00 00 00</strong></div>
+        <a class="contact-btn" href="https://wa.me/212600000000" target="_blank">تواصل عبر واتساب</a>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- main column -->
+      <div>
+        <section class="card">
+          <h2>خدماتنا</h2>
+          <p class="muted">نقدّم دروسا حضورية وجماعية وفردية لجميع المستويات: الابتدائي، الإعدادي، والثانوي (بكالوريا عام ودولي).</p>
+
+          <div class="services" style="margin-top:12px;">
+            <div class="service">
+              <h3>الثانية باكالوريا (عام / دولي)</h3>
+              <div class="muted">رياضيات — فيزياء — علوم الحياة والأرض (SVT)</div>
+            </div>
+            <div class="service">
+              <h3>الإعدادي</h3>
+              <div class="muted">رياضيات — فيزياء — فرنسية — إنجليزية</div>
+            </div>
+            <div class="service">
+              <h3>الابتدائي</h3>
+              <div class="muted">دروس دعم — فرنسية — إنجليزية</div>
+            </div>
+            <div class="service">
+              <h3>متابعة ومراقبة</h3>
+              <div class="muted">متابعة تقدم التلميذ، تمارين منزلية، اختبارات محاكاة</div>
+            </div>
+          </div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px solid #eef2ff">
+
+          <h3>قائمة الأسعار (مبسطة)</h3>
+          <div class="prices">
+            <!-- ثانية باك -->
+            <div class="price-card">
+              <h4>الثانية باكالوريا</h4>
+              <div class="price-row"><div>الرياضيات</div><div>150 د.م / شهر</div></div>
+              <div class="price-row"><div>الفيزياء</div><div>150 د.م / شهر</div></div>
+              <div class="price-row"><div>باقة رياضيات + فيزياء</div><div><strong>200 د.م</strong></div></div>
+              <div class="price-row"><div>SVT</div><div>150 د.م (أو 120 د.م إذا يدرس رياضيات/فيزياء)</div></div>
+              <div class="tag">رسوم تسجيل: 50 د.م (مرة واحدة)</div>
+            </div>
+
+            <!-- إعدادي -->
+            <div class="price-card">
+              <h4>الإعدادي</h4>
+              <div class="price-row"><div>الرياضيات</div><div>100 د.م / شهر</div></div>
+              <div class="price-row"><div>الفيزياء</div><div>100 د.م / شهر</div></div>
+              <div class="price-row"><div>باقة رياضيات + فيزياء</div><div><strong>150 د.م</strong></div></div>
+              <div class="price-row"><div>الفرنسية / الإنجليزية</div><div>120 د.م / شهر</div></div>
+              <div class="tag">رسوم تسجيل: 50 د.م</div>
+            </div>
+
+            <!-- ابتدائي -->
+            <div class="price-card">
+              <h4>الابتدائي</h4>
+              <div class="price-row"><div>دروس الدعم</div><div>120 د.م / شهر</div></div>
+              <div class="price-row"><div>الفرنسية</div><div>120 د.م / شهر</div></div>
+              <div class="price-row"><div>باقة دعم + فرنسية</div><div><strong>200 د.م</strong></div></div>
+              <div class="tag">رسوم تسجيل: 50 د.م</div>
+            </div>
+          </div>
+
+          <p class="small" style="margin-top:12px">ملاحظة: عند اختيار أكثر من مادة تخصم الباقات تلقائيًا في الحاسبة أدناه. رسوم التسجيل تُحتسب مرة واحدة فقط في أول دفع.</p>
+        </section>
+
+        <!-- calculator -->
+        <section class="card calc" style="margin-top:14px">
+          <div class="section-title">
+            <h2>حاسبة الأسعار التفاعلية</h2>
+            <div class="small">اختر المستوى و المواد لترى الثمن النهائي</div>
+          </div>
+
+          <div style="margin-top:10px">
+            <label for="level" class="small">المستوى</label>
+            <select id="level" style="padding:8px;border-radius:8px;border:1px solid #e6eefc;width:100%;margin-top:6px">
+              <option value="2bac">الثانية باكالوريا</option>
+              <option value="college">الإعدادي</option>
+              <option value="primary">الابتدائي</option>
+            </select>
+          </div>
+
+          <div style="margin-top:10px">
+            <div class="small">المواد</div>
+            <div class="subjects" id="subjects">
+              <!-- subjects will be populated by JS -->
+            </div>
+          </div>
+
+          <div class="result" id="result">
+            <div>المجموع: <strong id="total">0</strong> د.م</div>
+            <div class="small" style="margin-top:6px" id="breakdown">لا توجد مواد مختارة بعد.</div>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <button onclick="resetCalc()" style="padding:10px 12px;border-radius:10px;border:1px solid #e6eefc;background:white;cursor:pointer">إعادة تعيين</button>
+            <a id="enrollLink" class="contact-btn" href="#" style="text-decoration:none">تسجيل / تواصل</a>
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- sidebar -->
+      <aside>
+        <div class="card">
+          <h3>مزايانا</h3>
+          <ul style="padding-left:18px;margin-top:8px;color:var(--muted)">
+            <li>أساتذة متخصصون</li>
+            <li>حصص جماعية وفردية</li>
+            <li>مواد عام ودولي</li>
+            <li>متابعة دورية للمتعلمين</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>تواصل معنا</h3>
+          <p class="small">هاتف: <strong id="phone2">06 00 00 00 00</strong></p>
+          <p class="small">العنوان: <em>قرب محطة القطار — (استبدل بالمكان الفعلي)</em></p>
+          <a class="contact-btn" href="https://wa.me/212600000000" target="_blank" style="display:block;text-align:center;margin-top:8px">راسلنا الآن</a>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      © جمعية طريق النجاح — كافة الحقوق محفوظة
+    </footer>
+  </div>
+
+  <script>
+    // بيانات الأسعار وفق قاعدتك
+    const PRICES = {
+      "2bac": {
+        "math": 150,
+        "phys": 150,
+        "svt": 150,
+        "bundle_math_phys": 200,
+        "reg": 50
+      },
+      "college": {
+        "math": 100,
+        "phys": 100,
+        "fr": 120,
+        "en": 120,
+        "bundle_math_phys": 150,
+        "reg": 50
+      },
+      "primary": {
+        "support": 120,
+        "fr": 120,
+        "bundle_support_fr": 200,
+        "reg": 50
+      }
+    };
+
+    const subjectsContainer = document.getElementById('subjects');
+    const levelSelect = document.getElementById('level');
+    const totalEl = document.getElementById('total');
+    const breakdownEl = document.getElementById('breakdown');
+    const enrollLink = document.getElementById('enrollLink');
+
+    function renderSubjects(){
+      const lvl = levelSelect.value;
+      subjectsContainer.innerHTML = '';
+      if(lvl === '2bac'){
+        addCheckbox('math','الرياضيات');
+        addCheckbox('phys','الفيزياء');
+        addCheckbox('svt','علوم الحياة والأرض (SVT)');
+      } else if(lvl === 'college'){
+        addCheckbox('math','الرياضيات');
+        addCheckbox('phys','الفيزياء');
+        addCheckbox('fr','الفرنسية');
+        addCheckbox('en','الإنجليزية');
+      } else {
+        addCheckbox('support','دروس الدعم');
+        addCheckbox('fr','الفرنسية');
+      }
+      attachListeners();
+      calculate();
+    }
+
+    function addCheckbox(id,label){
+      const wrapper = document.createElement('label');
+      wrapper.className = 'checkbox';
+      wrapper.innerHTML = `<input type="checkbox" id="${id}" data-sub="${id}"><div>${label}</div>`;
+      subjectsContainer.appendChild(wrapper);
+    }
+
+    function attachListeners(){
+      subjectsContainer.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
+        cb.addEventListener('change', calculate);
+      });
+    }
+
+    function resetCalc(){
+      subjectsContainer.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.checked=false);
+      calculate();
+    }
+
+    function calculate(){
+      const lvl = levelSelect.value;
+      const checked = Array.from(subjectsContainer.querySelectorAll('input[type="checkbox"]:checked')).map(i=>i.dataset.sub);
+      let total = 0;
+      let notes = [];
+
+      // registration applies once if any subject chosen
+      const regFee = PRICES[lvl].reg;
+      let regApplied = checked.length > 0 ? regFee : 0;
+
+      if(lvl === '2bac'){
+        // bundle math+phys
+        const hasMath = checked.includes('math');
+        const hasPhys = checked.includes('phys');
+        const hasSVT = checked.includes('svt');
+
+        if(hasMath && hasPhys){
+          total += PRICES[lvl].bundle_math_phys;
+          notes.push('باقة رياضيات + فيزياء: ' + PRICES[lvl].bundle_math_phys + ' د.م');
+        } else {
+          if(hasMath){ total += PRICES[lvl].math; notes.push('رياضيات: ' + PRICES[lvl].math + ' د.م'); }
+          if(hasPhys){ total += PRICES[lvl].phys; notes.push('فيزياء: ' + PRICES[lvl].phys + ' د.م'); }
+        }
+
+        if(hasSVT){
+          // SVT price reduced to 120 if student also studies math or physics
+          if(hasMath || hasPhys){
+            total += 120;
+            notes.push('SVT (مخفظة لوجود مادة علمية): 120 د.م');
+          } else {
+            total += PRICES[lvl].svt;
+            notes.push('SVT: ' + PRICES[lvl].svt + ' د.م');
+          }
+        }
+
+      } else if(lvl === 'college'){
+        const hasMath = checked.includes('math');
+        const hasPhys = checked.includes('phys');
+        // bundle math+phys
+        if(hasMath && hasPhys){
+          total += PRICES[lvl].bundle_math_phys;
+          notes.push('باقة رياضيات + فيزياء: ' + PRICES[lvl].bundle_math_phys + ' د.م');
+        } else {
+          if(hasMath){ total += PRICES[lvl].math; notes.push('رياضيات: ' + PRICES[lvl].math + ' د.م'); }
+          if(hasPhys){ total += PRICES[lvl].phys; notes.push('فيزياء: ' + PRICES[lvl].phys + ' د.م'); }
+        }
+        if(checked.includes('fr')){ total += PRICES[lvl].fr; notes.push('فرنسية: ' + PRICES[lvl].fr + ' د.م'); }
+        if(checked.includes('en')){ total += PRICES[lvl].en; notes.push('إنجليزية: ' + PRICES[lvl].en + ' د.م'); }
+
+      } else { // primary
+        const hasSupport = checked.includes('support');
+        const hasFr = checked.includes('fr');
+        if(hasSupport && hasFr){
+          total += PRICES[lvl].bundle_support_fr;
+          notes.push('باقة دعم + فرنسية: ' + PRICES[lvl].bundle_support_fr + ' د.م');
+        } else {
+          if(hasSupport){ total += PRICES[lvl].support; notes.push('دروس الدعم: ' + PRICES[lvl].support + ' د.م'); }
+          if(hasFr){ total += PRICES[lvl].fr; notes.push('فرنسية: ' + PRICES[lvl].fr + ' د.م'); }
+        }
+      }
+
+      // add registration fee only once if any subject chosen
+      if(regApplied>0) {
+        total += regApplied;
+        notes.push('رسوم التسجيل: ' + regApplied + ' د.م');
+      }
+
+      // display
+      totalEl.textContent = total;
+      if(checked.length === 0){
+        breakdownEl.textContent = 'لا توجد مواد مختارة بعد.';
+      } else {
+        breakdownEl.innerHTML = notes.map(n=>`• ${n}`).join('<br>');
+      }
+
+      // set enroll link to open whatsapp with summary
+      const lvlLabel = (lvl === '2bac') ? 'الثانية باكالوريا' : (lvl==='college'?'الإعدادي':'الابتدائي');
+      const msg = encodeURIComponent(`أود التسجيل: المستوى: ${lvlLabel}%0Aالمواد: ${checked.join(', ') || 'لا شيء'}%0Aالمجموع: ${total} د.م`);
+      enrollLink.href = `https://wa.me/212600000000?text=${msg}`;
+    }
+
+    levelSelect.addEventListener('change', renderSubjects);
+
+    // initial render
+    renderSubjects();
+  </script>
+</body>
+  </html>
